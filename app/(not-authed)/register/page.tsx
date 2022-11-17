@@ -1,6 +1,6 @@
-import LoginForm from './form';
+import RegisterForm from './form';
 
-export default function LoginPage() {
+export default function RegisterPage() {
   return (
     <div style={{ width: '100%', display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
       <div
@@ -14,9 +14,9 @@ export default function LoginPage() {
         }}
       >
         <h1>Welcome</h1>
-        <h3>Log in to your account</h3>
-        <LoginForm />
+        <h3>Make an account</h3>
+        <RegisterForm />
       </div>
     </div>
-  );
+  )
 }
