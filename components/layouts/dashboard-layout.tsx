@@ -84,7 +84,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
             theme="dark"
             mode="horizontal"
             defaultSelectedKeys={['home']}
-            onClick={handleHeaderMenuClick}
+            onClick={handleHeaderMenuClick as ((item: MenuItem<string>) => void)}
             items={headerMenutItems}
           />
         </Layout.Header>

@@ -8,7 +8,7 @@ export type ApiResponsePayload = unknown;
 const client = {
   get: async (path: string, options?: AxiosRequestConfig): Promise<ApiResponsePayload> => {
     return axios
-      .get(`${BASE_URL}${path}`, options)
+      .get(`${BASE_URL}${path}`, { ...options, withCredentials: true })
       .then(({ data }: { data: ApiResponsePayload }) => data);
   },
   post: async (
@@ -17,7 +17,7 @@ const client = {
     options?: AxiosRequestConfig,
   ): Promise<ApiResponsePayload> => {
     return axios
-      .post(`${BASE_URL}${path}`, payload, options)
+      .post(`${BASE_URL}${path}`, payload, { ...options, withCredentials: true })
       .then(({ data }: { data: ApiResponsePayload }) => data);
   },
 };

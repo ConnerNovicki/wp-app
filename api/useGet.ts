@@ -27,14 +27,8 @@ export default function useGet<T = unknown>(
 
     setData({ error: null, data: null, isLoading: true });
 
-    const sid = localStorage.getItem('sid')
-
     api
-      .get(path, {
-        params, headers: {
-          Authorization: `Bearer ${sid}`
-        }
-      })
+      .get(path, { params })
       .then((data) => {
         setData({ isLoading: false, data: data as T, error: null });
       })
