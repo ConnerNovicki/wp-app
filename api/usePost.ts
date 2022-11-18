@@ -18,7 +18,9 @@ export default function usePost<P extends PostParams, T = unknown>(
   async function callApi(params: P): Promise<T> {
     setIsSubmitting(true);
 
-    const res = await api.post(url, params.payload);
+    const sid = localStorage.getItem('sid')
+
+    const res = await api.post(url, params.payload, { headers: { Authorization: `Bearer ${sid}` } });
 
     setIsSubmitting(false);
 
